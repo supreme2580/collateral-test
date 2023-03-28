@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client"
 import client from "../../apollo-client"
 import { NextApiRequest, NextApiResponse } from "next"
-import convert from "ether-converter"
+const convert = require("ether-converter")
 
 async function getData() {
     const result = await client.query({
