@@ -14,6 +14,10 @@ export default function Home() {
   const client = new ApolloClient({
     uri: APIURL,
     cache: new InMemoryCache(),
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "X-Requested-With"
+    }
   })
   client
   .query({
