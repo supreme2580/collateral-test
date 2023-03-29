@@ -10,7 +10,6 @@ export default function Home() {
   useEffect(() => {
     async function getResponse(){
       const res: any = await getData()
-      console.log(res)
       return setData(res)
     }
     getResponse()
@@ -22,7 +21,7 @@ export default function Home() {
       </Head>
       <div className="w-full min-h-screen bg-black flex flex-col justify-center">
         <div className="w-full text-center">
-          <p className="text-white text-3xl">Total deposit collateral: {data}ETH</p>
+          <p className="text-white text-3xl">Total deposit collateral: {data}BTC</p>
         </div>
       </div>
     </>

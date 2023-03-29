@@ -4,6 +4,7 @@ import { NextApiRequest, NextApiResponse } from "next"
 const convert = require("ether-converter")
 
 async function getData() {
+    const eth_btc_ratio: any = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=btc").then((response: any) => response.json()).then((response: any) => {return response})
     const result = await client.query({
         query: gql`
         {
@@ -21,7 +22,7 @@ async function getData() {
             return Number(a) + Number(b)
         }, 0)
         const convertedBalance = convert(balance, 'wei')
-        return JSON.stringify(convertedBalance.ether)
+        return JSON.stringify(convertedBalance.ether * eth_btc_ratio.ethereum.btc)
     }
     else {
         return "{}"
