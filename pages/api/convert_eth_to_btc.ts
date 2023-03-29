@@ -12,5 +12,5 @@ async function getData() {
 }
 
 export default async function convert_eth_to_btc(req: NextApiRequest, res: NextApiResponse) {
-    res.end(await getData())
+    res.end(2)
 }
