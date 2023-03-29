@@ -3,7 +3,7 @@ import client from "../../apollo-client"
 import { NextApiRequest, NextApiResponse } from "next"
 const convert = require("ether-converter")
 
-async function getData() {
+async function getBalance() {
     const result = await client.query({
         query: gql`
         {
@@ -29,5 +29,5 @@ async function getData() {
 }
 
 export default async function data(req: NextApiRequest, res: NextApiResponse) {
-    res.end(await getData())
+    res.end(await getBalance())
 }
