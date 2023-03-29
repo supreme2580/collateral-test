@@ -21,8 +21,8 @@ async function getData() {
         const balance = balanceArray.reduce(function(a, b){
             return Number(a) + Number(b)
         }, 0)
-        const convertedBalance = convert(balance, 'wei')
-        return JSON.stringify(convertedBalance.ether * eth_btc_ratio.ethereum.btc)
+        const convertedBalance = convert(balance, 'wei').ether * eth_btc_ratio.ethereum.btc
+        return JSON.stringify(convertedBalance)
     }
     else {
         return "{}"
