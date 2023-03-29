@@ -7,6 +7,7 @@ async function getData() {
         return eth_btc_ratio.ethereum.btc.toString()
     } catch (error) {
         console.log(error)
+        return "0"
     }
 }
 
