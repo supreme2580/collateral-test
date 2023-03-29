@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [data, setData] = useState("")
   async function getData() {
-    const res = await fetch("/api/data").then((response: any) => response.json()).then((response: any) => {return response})
-    return res
+    const eth_value = await fetch("/api/data").then((response: any) => response.json()).then((response: any) => {return response})
+    const eth_to_btc_ratio = await fetch("/api//convert_eth_to_btc").then((response: any) => response.json()).then((response: any) => {return response})
+    return eth_value * eth_to_btc_ratio 
   }
   useEffect(() => {
     async function getResponse(){
