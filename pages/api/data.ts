@@ -14,7 +14,7 @@ async function getData() {
           }
         `
     }).catch(e => console.log(e))
-    if (result){
+    if (result && eth_btc_ratio){
         const response = result.data.agreementPositions
         const balanceArray: any[] = []
         response.map((balance: any) => balanceArray.push(balance.balance))
